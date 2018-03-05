@@ -1,0 +1,214 @@
+@charset "utf-8";
+
+/*
+  颜色
+ */
+
+$theme_blue_color: #5bc0de; // 页面蓝色主题 --默认色
+$theme_blue_normal_color:#323a45; // 页面蓝色主题 --未激活色
+$theme_blue_active_color: #31708f; // 页面蓝色主题 --默激活色
+
+$theme_pure_color:#4772d9; //页面紫色主题 --默认色
+$theme_pure_normal_color:#8f88f9; //页面紫色主题 --未激活色
+$theme_pure_active_color:#b1c3ef; //页面紫色主题 --默激活色
+
+$theme_dark_color:#323a45; //页面灰色主题 --默认色
+$theme_dark_normal_color:rgb(123, 123, 123); //页面灰色主题 --未激活色
+$theme_dark_active_color:#83878a; //页面灰色主题色
+
+$clear-color:#fff;
+
+/*选择主题面板      */
+.theme-blue{
+  background-color: $theme_blue_color;
+  color:  $theme_blue_color;
+}
+.theme-pure{
+  background-color: $theme_pure_color;
+  color:  $theme_pure_color;
+}
+.theme-dark{
+  background-color: $theme_dark_color;
+  color:  $theme_dark_color;
+}
+/*
+  主题色相关
+ */
+
+ .mo-theme-blue{
+  color: $theme_blue_normal_color;
+  .mo-oa-leftbar{
+    background-color: $theme_blue_color;
+    .panel-oa {
+      border-color: $theme_blue_color;
+    }
+    .panel-oa > .panel-heading {
+      text-shadow: 0 0 1px $theme_blue_active_color;
+      background-color: $theme_blue_color;
+      border-color: $theme_blue_color;
+      .mo-text{
+        color:$clear-color;
+      }
+      .mo-text:hover{
+        color:$clear-color;
+      }
+    }
+    .panel-oa > .panel-heading + .panel-collapse > .panel-body {
+      border-top-color: $theme_blue_color;
+    }
+    .panel-oa > .panel-heading .badge {
+      color: $theme_blue_color;
+      background-color: $theme_blue_active_color;
+    }
+    .panel-oa > .panel-footer + .panel-collapse > .panel-body {
+      border-bottom-color: $theme_blue_color;
+    }
+  }
+  .mo-oa-header{
+    .navbar-header{
+      color: $theme_blue_color;
+      .glyphicon.glyphicon-globe{
+        color: $theme_blue_color;
+      }
+      .mo-text{
+        color: $theme_blue_color;
+      }
+    }
+  }
+  .mo-text{
+    color: $theme_blue_normal_color;
+  }
+  .mo-oa-leftbar .mo-text:hover,.mo-oa-main .mo-text:hover{
+    color: $theme_blue_color;
+    text-shadow: 0px 1px 0px $theme_blue_color;
+  }
+  .mo-oa-leftbar .active,.mo-oa-main .active{
+    background-color: $theme_blue_normal_color;
+    border-color:$theme_blue_normal_color;
+    a,.mo-text{
+      color: $clear-color;
+    }
+  }
+}
+
+.mo-theme-pure{
+  color: $theme_pure_color;
+  .panel-oa {
+    border-color: $theme_pure_color;
+  }
+  .panel-oa > .panel-heading {
+    color: $clear-color;
+    text-shadow: 0 0 1px $theme_pure_active_color;
+    background-color: $theme_pure_color;
+    border-color: $theme_pure_color;
+    .mo-text{
+      color:$clear-color;
+    }
+    .mo-text:hover{
+      color:$clear-color;
+    }
+  }
+  .panel-oa > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: $theme_pure_color;
+  }
+  .panel-oa > .panel-heading .badge {
+    color: $theme_pure_color;
+    background-color: $theme_pure_active_color;
+  }
+  .panel-oa > .panel-footer + .panel-collapse > .panel-body {
+    border-bottom-color: $theme_pure_color;
+    .mo-text{
+      color: $theme_pure_color;
+    }
+  }
+  .mo-oa-leftbar{
+    background-color: $theme_pure_color;
+  }
+  .mo-oa-header{
+    .navbar-header{
+      .glyphicon.glyphicon-globe{
+        color: $theme_pure_color;
+      }
+    }
+    .mo-text{
+      color: $theme_pure_color;
+    }
+  }
+  .mo-text{
+    color: $theme_pure_normal_color;
+  }
+  .mo-oa-leftbar .mo-text:hover,.mo-oa-main .mo-text:hover{
+    color: $theme_pure_color;
+    text-shadow: 0px 1px 0px $theme_pure_color;
+  }
+  .mo-oa-leftbar .active,.mo-oa-main .active{
+    background-color: $theme_pure_normal_color;
+    border-color:$theme_pure_normal_color;
+    a,.mo-text{
+      color: $clear-color;
+    }
+  }
+}
+
+.mo-theme-dark{
+  color: $theme_dark_color;
+  .panel-oa {
+    border-color: $theme_dark_color;
+  }
+  .panel-oa > .panel-heading {
+    text-shadow: 0 0 1px $theme_dark_active_color;
+    background-color: $theme_dark_color;
+    border-color: $theme_dark_color;
+    .mo-text{
+      color:$clear-color;
+    }
+    .mo-text:hover{
+      color:$clear-color;
+    }
+  }
+  .panel-oa > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: $theme_dark_color;
+  }
+  .panel-oa > .panel-heading .badge {
+    color: $theme_dark_color;
+    background-color: $theme_dark_active_color;
+  }
+  .panel-oa > .panel-footer + .panel-collapse > .panel-body {
+    border-bottom-color: $theme_dark_color;
+  }
+  .mo-oa-leftbar{
+    background-color: $theme_dark_color;
+  }
+  .mo-oa-header{
+    .navbar-header{
+      .glyphicon.glyphicon-globe{
+        color: $theme_dark_color;
+      }
+    }
+    .mo-text{
+      color: $theme_dark_color;
+    }
+  }
+  .mo-oa-header{
+    .navbar-header{
+      text-shadow: 0 0 1px $theme_dark_normal_color;
+      .glyphicon.glyphicon-globe{
+        color: $theme_dark_color;
+      }
+    }
+  }
+  .mo-text{
+    color: $theme_dark_normal_color;
+  }
+  .mo-oa-leftbar .mo-text:hover,.mo-oa-main .mo-text:hover{
+    color: $theme_dark_color;
+    text-shadow: 0px 1px 0px $theme_dark_color;
+  }
+  .mo-oa-leftbar .active,.mo-oa-main .active{
+    background-color: $theme_dark_normal_color;
+    border-color:$theme_dark_normal_color;
+    a,.mo-text{
+      color: $clear-color;
+    }
+  }
+}

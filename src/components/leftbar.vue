@@ -1,0 +1,77 @@
+<!--左侧面板信息-->
+<template>
+  <div class="mo-oa-leftbar">
+    <div class="panel panel-oa" v-for="(tab, tindex) in Tabs" :key='tindex' >
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <span data-toggle="collapse" :data-href="'#tab'+tindex" @click="collapseTab(tindex)">
+            <i class="glyphicon" :class="'glyphicon-'+tab.icon"></i><span class="mo-text">&nbsp;&nbsp;&nbsp;&nbsp;{{tab.title}}</span>
+            <i class="glyphicon glyphicon-menu-down pull-right"></i>
+
+          </span>
+        </h4>
+      </div>
+      <div :id="'tab'+tindex" class="panel-collapse collapse" :class="{'in': isActive == tindex}">
+        <div class="panel-body">
+          <ul class="list-group">
+            <li class="list-group-item" v-for="(list,lindex) in tab.content" :key='lindex' :class="{'active': isActiveList == (tindex+'--'+lindex)}" @click="goRouter(tindex,lindex)" >
+              <router-link :to="{path:list.link,query: {tabIndex: tindex+1,listIndex:lindex+1}}" class="mo-text">
+                <i class="glyphicon" :class="'glyphicon-'+list.icon"></i>
+                <span class="mo-text">&nbsp;&nbsp;&nbsp;&nbsp;{{tindex+1}}--{{list.text}}</span>
+              </router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <mo-footer></mo-footer>
+  </div>
+</template>
+<script>
+
+import Hello from './Hello'
+import melon from './melon'
+import moFooter from './footer'
+import axios from 'axios';
+
+export default {
+    name: 'leftbar',
+    data() {
+      return {
+        isActive: 0,// tab_active样式
+        isActiveList: '0--0',// tab_active样式
+        
+        Tabs: []
+        }
+    },
+    methods: {
+      collapseTab: function(ind) {
+        this.isActive = ind;
+      },
+      goRouter: function(tabIndex,listIndex) {
+        this.isActiveList = tabIndex+'--'+listIndex;
+      }
+    },
+    components:{
+      Hello,
+      melon,
+      moFooter
+    },
+  created:function(){
+    let that = this;
+    axios
+      .get('../../static/mock/leftPanelData.json')
+      .then((response) => {
+        console.log("请求到的面板数据是");        
+        console.log(response.data);
+        that.Tabs = response.data || [];
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+  }
+</script>
+<style>
+
+</style>

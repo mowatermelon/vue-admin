@@ -1,0 +1,33 @@
+/*自定义清除默认样式*/
+/*清除默认的样式bug*/
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px #fff inset;
+}
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+}
+button{
+  outline: 0 none;
+}
+
+button,.btn{
+  outline: 0 none;
+}
+button:active,button:hover,button:focus,button:visited,button:focus-within,.btn:active,.btn:hover,.btn:focus,.btn:visited,.btn:focus-within{
+  outline: 0 none;
+  text-decoration: none;
+}
+
+
+@media (max-width:768px){
+  div[class *='col-xs-' ]{
+    margin:0;
+    padding:0;
+  }
+}

@@ -1,0 +1,168 @@
+/*
+  颜色
+ */
+$font_normal:#fff;//页面字体默认颜色
+
+$normal_bgcolor:#f4f3ef;//页面默认的背景色
+$shadow_color:rgba(0,0,0,.2);//标题栏的下阴影
+
+/*
+  间距相关
+ */
+ $normal_padding: 1rem;//默认的padding值
+ $normal_margin: 1rem;//默认的margin值
+ $normal_margin: 1rem;//默认的margin值
+
+/*
+  宽度
+ */
+ $left_width:270px;
+ $left_min_width:46px;
+ $left_min_padding:1.5rem;
+
+/*
+  自定义样式清除
+ */
+.panel-oa{
+  border-radius: 0;
+  border: 0 none;
+  .panel-heading{
+    cursor: pointer;
+    border-radius: 0;
+    color: #fff;
+  }
+  .panel-collapse .panel-body{
+    padding:0;
+    border:0 none;
+    .list-group {
+      .list-group-item{
+        border-radius: 0;
+        text-align: left;
+        
+      }
+    }
+  }
+}
+
+/*
+  高度
+ */
+$head_height:5rem;
+$head_line_height:3rem;
+$footer_height:3rem;
+
+/*
+  整体布局相关
+ */
+ .mo-container{
+  overflow: hidden;
+  color: $font_normal;
+  height: 100vh;
+  .mo-oa-header{
+    background-color: $normal_bgcolor;
+    -webkit-box-shadow: 0 0 20px 2px $shadow_color;
+    box-shadow: 0 0 20px 2px $shadow_color;
+    transition: 0.3s;
+    padding: $normal_padding;
+    height: $head_height;
+    color: $font_normal;
+
+    &::after{
+      clear: both;
+    }
+    .mo-brand{
+      line-height: $head_height;
+    }
+    .navbar-header {
+      .mo-text{
+        line-height: $head_line_height;
+      }
+    }
+  }
+  main{
+    width: 100%;
+    display: flex;
+    flex-direction: row;// row | row-reverse | column | column-reverse
+    flex-wrap: nowrap;//nowrap | wrap | wrap-reverse
+    align-items: stretch;//flex-start | flex-end | center | baseline | stretch;
+    height: 100%;
+    margin-top:0.2rem;
+    .mo-oa-leftbar .mo-text:hover,.mo-oa-main .mo-text:hover{
+      font-weight: bolder;
+    }
+    .mo-oa-leftbar{
+      width: $left_width;
+      min-width: $left_width;
+      height: 100%;
+      box-shadow: 8px 0 16px -8px $shadow_color, 0 7px 14px -3px $shadow_color;
+      -webkit-box-shadow: 8px 0 16px -8px $shadow_color, 0 7px 14px -3px $shadow_color;
+      .panel{
+        margin-bottom: 0;
+        cursor: pointer;
+      }
+    }
+    .mo-oa-main{
+      flex:1;
+      overflow: hidden;
+      padding:$normal_padding;
+      background-color: $normal_bgcolor;
+      .map_box,.map_box .map_div {
+        width:100%;
+        height: calc(100% - 3rem);
+        cursor: pointer;
+      }
+    }
+  }
+  .mo-oa-footer{
+    width: 100%;
+    line-height: $footer_height;
+    color: $font_normal;
+  }
+
+}
+
+
+
+
+/*响应相关*/
+
+@media (max-width:768px){
+  .mo-container{
+    overflow: hidden;
+    color: $font_normal;
+    .mo-oa-header{
+      font-size: 0.5rem;
+      .navbar-header{
+        .mo-text{
+          display: none;
+        }
+      }
+
+    }
+    main{
+      .mo-oa-leftbar{
+        width: $left_min_width;
+        min-width: $left_min_width;
+        .panel-oa > .panel-heading {
+          padding-bottom: $left_min_padding;
+          border-bottom:2px solid;
+          .mo-text{
+            display:none;
+          }
+          .glyphicon{
+            display: block;
+          }
+        }
+        .panel-oa > .panel-heading + .panel-collapse > .panel-body {
+          .mo-text .mo-text{
+            display:none;
+          }
+        }
+      }
+    }
+    .mo-oa-footer{
+      display: none;
+    }
+
+  }
+}
