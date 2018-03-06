@@ -90,6 +90,8 @@ export default {
         _this.error = false;
         _this.success = true;
         _this.successInfo = '登录成功正在跳转....';
+        
+        _this.$store.commit('setUName',_this.uname);        
         _this.$store.commit('checkLogin',false);
         //避免用户退出之后刷新页面之前的路由被刷掉，手动加上登录成功的query参数
         _this.$router.push({path: '/Hello', query: {tabIndex: 1,listIndex:1}});
@@ -101,8 +103,11 @@ export default {
     checkReg () {
       let _this = this;
       _this.error = false;
-      if (_this.password !== '' && _this.password === _this.rpassword) {
+      if (_this.uname!== '' && _this.password !== '' && _this.password === _this.rpassword) {
+        _this.$store.commit('setUName',_this.uname);                
         _this.$store.commit('checkLogin',false);
+        _this.$router.push({path: '/Hello', query: {tabIndex: 1,listIndex:1}});
+        
         // this.$emit('increment');
         // _this.gores = false;
       } else {
