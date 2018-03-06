@@ -14,7 +14,7 @@ export default new Router({
     {
       path: '/',
       name: 'v-main',
-      component: Feature
+      component: Hello
     },
     {
       path: '/Hello',
