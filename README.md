@@ -96,7 +96,6 @@ npm run build
 ├── index.html                                  // 入口html文件
 .
 
-56 directories, 203 files
 ```
 
 # 项目效果图
