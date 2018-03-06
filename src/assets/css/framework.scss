@@ -11,7 +11,7 @@ $shadow_color:rgba(0,0,0,.2);//标题栏的下阴影
  */
  $normal_padding: 1rem;//默认的padding值
  $normal_margin: 1rem;//默认的margin值
- $normal_margin: 1rem;//默认的margin值
+ $normal_radius:6px;//默认的圆角弧度
 
 /*
   宽度
@@ -35,10 +35,9 @@ $shadow_color:rgba(0,0,0,.2);//标题栏的下阴影
     padding:0;
     border:0 none;
     .list-group {
+      margin-bottom: 0;
       .list-group-item{
-        border-radius: 0;
         text-align: left;
-        
       }
     }
   }
@@ -90,6 +89,10 @@ $footer_height:3rem;
     .mo-oa-leftbar .mo-text:hover,.mo-oa-main .mo-text:hover{
       font-weight: bolder;
     }
+    .mo-oa-leftbar .list-group-item.active,.mo-oa-main .active{
+      border-color:transparent;
+      border-radius: 0 $normal_radius $normal_radius 0;
+    }
     .mo-oa-leftbar{
       width: $left_width;
       min-width: $left_width;
@@ -99,6 +102,9 @@ $footer_height:3rem;
       .panel{
         margin-bottom: 0;
         cursor: pointer;
+        .panel-body{
+
+        }
       }
     }
     .mo-oa-main{
@@ -140,6 +146,9 @@ $footer_height:3rem;
 
     }
     main{
+      .mo-oa-leftbar .list-group-item.active,.mo-oa-main .active{
+        border-radius: 0;
+      }
       .mo-oa-leftbar{
         width: $left_min_width;
         min-width: $left_min_width;
