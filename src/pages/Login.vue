@@ -5,7 +5,6 @@
       <p class="text-center alert alert-success"  :class="[!success?'hide':'']" v-text="successInfo"></p>
 
       <div class="form-horizontal col-xs-12 col-sm-6 col-sm-offset-3 loginBox">
-        <form>
           <div class="h1 text-center" v-if="!gores">
             <span class="glyphicon glyphicon-user loginIcon" alt="用户登录"></span>
           </div>
@@ -24,7 +23,7 @@
             <label class="input-group-addon glyphicon glyphicon-lock col-xs-2" for="userPwd"></label>
             <div class="col-xs-10 has-feedback">
               <span class="glyphicon form-control-feedback" :class="checkInput"></span>
-            <input type="password" class="form-control" id="userPwd" placeholder="请输入密码"  v-model="password " autocomplete="on"/>
+            <input type="password" class="form-control" id="userPwd" placeholder="请输入密码" v-model="password " autocomplete="off"/>
 
             </div>
           </div>
@@ -33,7 +32,7 @@
             <label class="input-group-addon glyphicon glyphicon-asterisk col-xs-2" for="userrPwd"></label>
             <div class="col-xs-10 has-feedback">
               <span class="glyphicon form-control-feedback" :class="checkInput"></span>
-              <input type="password" class="form-control" id="userrPwd" placeholder="请再次确认输入密码"  v-model="rpassword" autocomplete="on"/>
+              <input type="password" class="form-control" id="userrPwd" placeholder="请再次确认输入密码"  v-model="rpassword" autocomplete="off"/>
             </div>
           </div>
           <div v-if="!gores">
@@ -44,16 +43,12 @@
             <button class="btn btn-block submitBtn" @click="checkReg()">注册账户</button>
             <button class="btn btn-link pull-right" @click="goLogin()">已有帐号去登陆</button>
           </div>
-        </form>
-
-
       </div>
     </div>
   </transition>
 </template>
 
 <script>
-// import store from '../vuex/store'
 
 export default {
   name: 'Login',
@@ -95,8 +90,9 @@ export default {
         _this.error = false;
         _this.success = true;
         _this.successInfo = '登录成功正在跳转....';
-        this.$emit('increment');
-        // _this.$router.push({path: '/',  params: { isLogin: false }});
+        _this.$store.commit('checkLogin',false);
+        //避免用户退出之后刷新页面之前的路由被刷掉，手动加上登录成功的query参数
+        _this.$router.push({path: '/Hello', query: {tabIndex: 1,listIndex:1}});
       } else {
         _this.error = true;
         _this.errorInfo = '用户名或者帐号输入错误请确认';
@@ -106,7 +102,8 @@ export default {
       let _this = this;
       _this.error = false;
       if (_this.password !== '' && _this.password === _this.rpassword) {
-        this.$emit('increment');
+        _this.$store.commit('checkLogin',false);
+        // this.$emit('increment');
         // _this.gores = false;
       } else {
         _this.error = true;
