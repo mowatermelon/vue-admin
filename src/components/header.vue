@@ -15,7 +15,7 @@
       <div class="login col-xs-7 col-sm-7">
         <p class="navbar-text mo-text">
           <span class="glyphicon glyphicon-user" alt="用户头像"></span>
-          西瓜<br/>研发部
+          {{uName}}<br/>研发部
         </p>
 
         <button type="button" class="btn btn-link" @click="loginOut">
@@ -33,6 +33,21 @@ export default {
     return {
       changeType:'',
       themeType:['blue','pure','dark']
+    }
+  },
+  computed: {
+    uName () {
+      let res;      
+      let _this = this;
+      let _route = _this.$route;
+      console.log(_route.query);
+      if(_route.query.hasOwnProperty('tabIndex')&&_route.path !=='/'){
+          //已经登录成功的用户，保证不必在页面刷新之后用户名丢失
+          res = '西瓜';
+      }else{
+          res = this.$store.state.userName;
+      }
+      return res;
     }
   },
   methods: {
