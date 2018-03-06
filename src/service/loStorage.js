@@ -1,10 +1,14 @@
-if(localStorage.getItem('isLogin') === null){
-    localStorage.setItem('isLogin','true');
+function setItem(name,value){
+    if(localStorage.getItem(name) === null){
+        localStorage.setItem(name,value);
+    }    
 }
-if(localStorage.getItem('themeType') === null){
-    localStorage.setItem('themeType','blue');      
+
+function initData(init){
+
+    for(let i=0;i<init.length;i++){
+        setItem(init[i].name,init[i].value);
+    }
 }
-if(localStorage.getItem('userName') === null){
-    localStorage.setItem('userName','');  
-}
-   
+
+export default {initData}
