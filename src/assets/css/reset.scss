@@ -1,7 +1,10 @@
 /*自定义清除默认样式*/
+
+$clear-color:#fff;
+
 /*清除默认的样式bug*/
 input:-webkit-autofill {
-  box-shadow: 0 0 0px 1000px #fff inset;
+  box-shadow: 0 0 0px 1000px $clear-color inset;
 }
 ul, menu, dir {
     display: block;
@@ -30,4 +33,9 @@ button:active,button:hover,button:focus,button:visited,button:focus-within,.btn:
     margin:0;
     padding:0;
   }
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+  background-color: $clear-color;
+  border-color: $clear-color;
 }
