@@ -93,8 +93,6 @@ export default {
         
         _this.$store.commit('setUName',_this.uname);        
         _this.$store.commit('checkLogin',false);
-        //避免用户退出之后刷新页面之前的路由被刷掉，手动加上登录成功的query参数
-        _this.$router.push({path: '/Hello', query: {tabIndex: 1,listIndex:1}});
       } else {
         _this.error = true;
         _this.errorInfo = '用户名或者帐号输入错误请确认';
@@ -106,9 +104,6 @@ export default {
       if (_this.uname!== '' && _this.password !== '' && _this.password === _this.rpassword) {
         _this.$store.commit('setUName',_this.uname);                
         _this.$store.commit('checkLogin',false);
-        _this.$router.push({path: '/Hello', query: {tabIndex: 1,listIndex:1}});
-        
-        // this.$emit('increment');
         // _this.gores = false;
       } else {
         _this.error = true;

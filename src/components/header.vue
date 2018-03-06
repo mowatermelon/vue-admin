@@ -37,17 +37,8 @@ export default {
   },
   computed: {
     uName () {
-      let res;      
-      let _this = this;
-      let _route = _this.$route;
-      console.log(_route.query);
-      if(_route.query.hasOwnProperty('tabIndex')&&_route.path !=='/'){
-          //已经登录成功的用户，保证不必在页面刷新之后用户名丢失
-          res = '西瓜';
-      }else{
-          res = this.$store.state.userName;
-      }
-      return res;
+      return this.$store.state.userName;
+      
     }
   },
   methods: {
@@ -65,7 +56,7 @@ export default {
     loginOut(){
       let _this = this;
       _this.$store.commit('checkLogin',true);
-      _this.$router.push({path: '/'});
+      // _this.$router.push({path: '/'});
       console.log('loginOut');
     }
   }

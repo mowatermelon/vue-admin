@@ -1,23 +1,27 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+require('../../../service/loStorage')
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    isLogin: true,
-    themeType:'blue',
-    userName:''
+    isLogin: JSON.parse(localStorage.getItem('isLogin')),
+    themeType: localStorage.getItem('themeType'),
+    userName: localStorage.getItem('userName')
   },
   mutations: {
     checkLogin (state, code) {
-        state.isLogin = code
+        localStorage.setItem('isLogin',code);
+        state.isLogin = JSON.parse(localStorage.getItem('isLogin'));
     },
     setTheme (state, code) {
-      state.themeType = code
+      localStorage.setItem('themeType',code);      
+      state.themeType = localStorage.getItem('themeType');
     },
     setUName (state, code) {
-      state.userName = code
+      localStorage.setItem('userName',code);      
+      state.userName = localStorage.getItem('userName');
     }
   }
 

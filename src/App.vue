@@ -22,17 +22,7 @@ export default {
   },
   computed: {
     isLogin () {
-      let res;      
-      let _this = this;
-      let _route = _this.$route;
-      console.log(_route.query);
-      if(_route.query.hasOwnProperty('tabIndex')&&_route.path !=='/'){
-          //已经登录成功的用户，保证不必在页面刷新之后重复登录了
-          res = false;
-      }else{
-          res = this.$store.state.isLogin;
-      }
-      return res;
+      return this.$store.state.isLogin;
     }
   },
   mounted() {
