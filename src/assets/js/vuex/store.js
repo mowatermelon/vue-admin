@@ -6,7 +6,8 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     isLogin: true,
-    themeType:'blue'
+    themeType:'blue',
+    userName:''
   },
   mutations: {
     checkLogin (state, code) {
@@ -14,6 +15,9 @@ const store = new Vuex.Store({
     },
     setTheme (state, code) {
       state.themeType = code
+    },
+    setUName (state, code) {
+      state.userName = code
     }
   }
 
