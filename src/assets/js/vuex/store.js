@@ -1,27 +1,36 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-require('../../../service/loStorage')
+import loS from '../../../service/loStorage'
 
-Vue.use(Vuex)
+//在使用vuex之前使用，先初始化相关数据
+const init = [
+  {name:'isLogin',value:'true'},
+  {name:'themeType',value:'blue'},
+  {name:'userName',value:''}
+];
+
+loS.initData(init);
+
+Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    isLogin: JSON.parse(localStorage.getItem('isLogin')),
-    themeType: localStorage.getItem('themeType'),
-    userName: localStorage.getItem('userName')
+    isLogin: loS.getItem('isLogin',false),
+    themeType: loS.getItem('themeType',true),
+    userName: loS.getItem('userName',true)
   },
   mutations: {
     checkLogin (state, code) {
         localStorage.setItem('isLogin',code);
-        state.isLogin = JSON.parse(localStorage.getItem('isLogin'));
+        state.isLogin = loS.getItem('isLogin',false);
     },
     setTheme (state, code) {
-      localStorage.setItem('themeType',code);      
-      state.themeType = localStorage.getItem('themeType');
+      loS.setItem('themeType',code);      
+      state.themeType = loS.getItem('themeType',true);
     },
     setUName (state, code) {
-      localStorage.setItem('userName',code);      
-      state.userName = localStorage.getItem('userName');
+      loS.setItem('userName',code);      
+      state.userName = loS.getItem('userName',true);
     }
   }
 
