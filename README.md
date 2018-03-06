@@ -22,7 +22,17 @@
 
 ``` bash
 # install dependencies
-cnpm i
+
+  # Good network environment
+    # install dependencies by cnpm or npm
+    cnpm i
+
+  # Bad network environment
+    # global install yarn
+    cnpm i yarn -g
+
+    # install dependencies by yarn
+    yarn install
 
 # serve with hot reload at localhost:8080
 npm run dev
