@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div v-if="isLogin">
-      <login @increment="checkLogin"></login>
+      <login></login>
     </div>
     <div v-if="!isLogin">
       <layout></layout>
@@ -9,6 +9,7 @@
   </div>
 </template>
 <script>
+
 import Login from './pages/Login'
 import Layout from './layouts/HeaderAsideFooterResponsiveLayout/Layout'
 
@@ -16,35 +17,31 @@ import Layout from './layouts/HeaderAsideFooterResponsiveLayout/Layout'
 export default {
   name: 'app',
   data () {
-    let that = this;
-    // debugger;
-    console.log(that.$route.params)
-    console.log(that.$route.params.isLogin)
-    console.log(that.$route.query)
-    console.log(that.$route.query.isLogin)
     return {
-      // isLogin: this.$store.state.isLogin
-      isLogin: that.$route.params.propertyIsEnumerable()?that.$route.params.isLogin:true
     }
   },
-  mounted: function(){
-      // let that = this;
+  computed: {
+    isLogin () {
+      let res;      
+      let _this = this;
+      let _route = _this.$route;
+      console.log(_route.query);
+      if(_route.query.hasOwnProperty('tabIndex')&&_route.path !=='/'){
+          //已经登录成功的用户，保证不必在页面刷新之后重复登录了
+          res = false;
+      }else{
+          res = this.$store.state.isLogin;
+      }
+      return res;
+    }
+  },
+  mounted() {
   },
   components:{
       Login,
       Layout
   },
   methods:{
-    checkLogin (state) {
-      console.log('checkLogin');
-      // console.log(state);
-
-      let that = this;
-      if(typeof(state)!="boolean"){
-        state = false;
-      }
-      that.isLogin = state;
-    }
   }
 }
 
