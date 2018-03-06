@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
     <div id="main" class="mo-container" :class="'mo-theme-'+tcolor">
-      <v-header @increment="checkTheme"></v-header>
+      <v-header></v-header>
       <main>
         <left-aside></left-aside>
         <aside class="mo-oa-main">
@@ -19,19 +19,14 @@ export default {
   name: 'Layout',
   data () {
     return {
-      tcolor:'blue'
+    }
+  },
+  computed: {
+    tcolor () {
+      return this.$store.state.themeType;
     }
   },
   methods:{
-    checkTheme (state) {
-       console.log('checkTheme');
-
-      let that = this;
-      if(typeof(state)!="boolean"){
-        state = false;
-      }
-      that.tcolor = 'dark';
-    }
   },
   components:{
       VHeader,
