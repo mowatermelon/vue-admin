@@ -46,9 +46,9 @@ npm run build
 
 ![登陆页面显示效果](static/img/login.png)
 ![注册页面显示效果](static/img/register.png)
-![大屏状态下黑色主题显示效果](static/img/large-pure.png)
+![大屏状态下紫色主题显示效果](static/img/large-pure.png)
 ![中屏状态下蓝色主题显示效果](static/img/middle-blue.png)
-![小屏状态下紫色主题显示效果](static/img/small-dark.png)
+![小屏状态下黑色主题显示效果](static/img/small-dark.png)
 
 # 修改主题效果
 
