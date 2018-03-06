@@ -52,7 +52,7 @@
 // import store from '../vuex/store'
 
 export default {
-  name: 'login',
+  name: 'Login',
   data () {
     return {
       uname: '',
@@ -93,12 +93,12 @@ export default {
         _this.successInfo = '登录成功正在跳转....';
         this.$emit('increment');
         // this.$emit('increment', false);
-        
+
         console.log('increment');
         // this.$emit('checkLogin', false);
         // store.mutations
         // _this.$store.commit('checkLogin', false);
-        
+
         // _this.$store.commit('checkLogin', false);
         // middleWare.$emit('login-check', false);
         // _this.ref.emit("login-check", false);
@@ -111,9 +111,9 @@ export default {
     },
     checkReg () {
       let _this = this;
-      _this.error = false;      
+      _this.error = false;
       if (_this.password !== '' && _this.password === _this.rpassword) {
-        this.$emit('increment');        
+        this.$emit('increment');
         // _this.gores = false;
       } else {
         _this.error = true;

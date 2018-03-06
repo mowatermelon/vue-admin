@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'moFooter',
+  name: 'Vfooter',
   data () {
     return {
 

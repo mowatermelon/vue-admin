@@ -1,5 +1,5 @@
 <template>
-  <div class="hello" id="hello">
+  <div id="Feature">
     <p class="alert alert-success">
       由西瓜酱提供包含三种颜色主题的vue后台操作模板
     </p>
@@ -16,7 +16,7 @@
 import axios from 'axios';
 
 export default {
-  name: 'Hello',
+  name: 'Feature',
   data () {
     return {
       lists: ['']
@@ -27,7 +27,7 @@ export default {
     axios
       .get('../../static/mock/completeList.json')
       .then((response) => {
-        console.log("请求到的已完成功能数据是");        
+        console.log("请求到的已完成功能数据是");
         console.log(response.data);
         that.lists = response.data || [];
       })
@@ -38,9 +38,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss">
-.hello{
-  color:#333333;
-}
+<style lang="scss" scoped>
+
 </style>

@@ -2,12 +2,11 @@
 <template>
   <div class="mo-oa-leftbar">
     <div class="panel panel-oa" v-for="(tab, tindex) in Tabs" :key='tindex' >
-      <div class="panel-heading">
+      <div class="panel-heading" @click="collapseTab(tindex)">
         <h4 class="panel-title">
-          <span data-toggle="collapse" :data-href="'#tab'+tindex" @click="collapseTab(tindex)">
+          <span data-toggle="collapse" :data-href="'#tab'+tindex">
             <i class="glyphicon" :class="'glyphicon-'+tab.icon"></i><span class="mo-text">&nbsp;&nbsp;&nbsp;&nbsp;{{tab.title}}</span>
             <i class="glyphicon glyphicon-menu-down pull-right"></i>
-
           </span>
         </h4>
       </div>
@@ -24,23 +23,22 @@
         </div>
       </div>
     </div>
-    <mo-footer></mo-footer>
+    <vfooter></vfooter>
   </div>
 </template>
 <script>
 
-import Hello from './Hello'
-import melon from './melon'
-import moFooter from './footer'
+import Hello from '../pages/Hello'
+import Feature from '../pages/Feature'
+import Vfooter from './Footer'
 import axios from 'axios';
 
 export default {
-    name: 'leftbar',
+    name: 'LeftAside',
     data() {
       return {
-        isActive: 0,// tab_active样式
-        isActiveList: '0--0',// tab_active样式
-        
+        isActive: 0,// 默认的tab数
+        isActiveList: '0--0',// 默认激活的子面板编号
         Tabs: []
         }
     },
@@ -54,15 +52,15 @@ export default {
     },
     components:{
       Hello,
-      melon,
-      moFooter
+      Feature,
+      Vfooter
     },
   created:function(){
     let that = this;
     axios
-      .get('../../static/mock/leftPanelData.json')
+      .get('../../static/mock/leftAsideData.json')
       .then((response) => {
-        console.log("请求到的面板数据是");        
+        console.log("请求到的面板数据是");
         console.log(response.data);
         that.Tabs = response.data || [];
       })

@@ -4,13 +4,13 @@
       <login @increment="checkLogin"></login>
     </div>
     <div v-if="!isLogin">
-      <main-oa></main-oa>
+      <layout></layout>
     </div>
   </div>
 </template>
 <script>
-import mainOa from './components/main'
-import login from './components/login'
+import Login from './pages/Login'
+import Layout from './layouts/HeaderAsideFooterResponsiveLayout/Layout'
 
 // Vue.use(Vuex)
 export default {
@@ -26,8 +26,8 @@ export default {
       // let that = this;
   },
   components:{
-      login,
-      mainOa
+      Login,
+      Layout
   },
   methods:{
     checkLogin (state) {

@@ -1,0 +1,36 @@
+[
+  {
+    "title":"西瓜面板一",
+    "icon":"dashboard",
+    "content":
+      [
+        {"text": "欢迎面板", "link":"/Hello","icon":"gift"},
+        {"text": "功能面板", "link":"/Feature","icon":"fire"}
+      ]
+  },
+  {
+    "title":"西瓜面板二",
+    "icon":"dashboard",
+    "content":
+      [
+        {"text": "欢迎面板", "link":"/Hello","icon":"plane"},
+        {"text": "功能面板", "link":"/Feature","icon":"magnet"}
+      ]
+  },
+  {
+    "title":"西瓜面板三",
+    "icon":"dashboard",
+    "content":[
+      {"text": "欢迎面板", "link":"/Hello","icon":"briefcase"},
+      {"text": "功能面板", "link":"/Feature","icon":"flash"}
+    ]
+  },
+  {
+    "title":"西瓜面板四",
+    "icon":"dashboard",
+    "content":[
+      {"text": "欢迎面板", "link":"/Hello","icon":"send"},
+      {"text": "功能面板", "link":"/Feature","icon":"stats"}
+    ]
+  }
+]

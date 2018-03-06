@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: 'moHeader',
+  name: 'Vheader',
   data () {
     return {
       changeType:'',
