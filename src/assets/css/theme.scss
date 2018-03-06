@@ -58,9 +58,13 @@ $clear-color:#fff;
     }
     .panel-oa > .panel-heading + .panel-collapse > .panel-body {
       border-top-color: $theme_blue_color;
-      .list-group-item:hover{
+      .list-group-item:hover,.list-group-item.active{
         color: $theme_blue_color;
-        border-left:5px solid $theme_blue_active_color;
+        border-left:5px solid $theme_blue_color;
+        .mo-text{
+          color:$theme_blue_color;
+          text-shadow: 0 0 1px $theme_blue_color;
+        }
       }
     }
     .panel-oa > .panel-heading .badge {
@@ -87,13 +91,6 @@ $clear-color:#fff;
   }
   .mo-oa-leftbar .mo-text:hover,.mo-oa-main .mo-text:hover{
     color: $theme_blue_color;
-    text-shadow: 0px 1px 0px $theme_blue_color;
-  }
-  .mo-oa-leftbar .active,.mo-oa-main .active{
-    background-image: linear-gradient(150deg,$linear-start 0%,$theme_blue_color 10%,$theme_blue_color 40%,$linear-end 100%);
-    a,.mo-text{
-      color: $clear-color;
-    }
   }
 }
 
@@ -119,6 +116,9 @@ $clear-color:#fff;
     .list-group-item:hover{
       color: $theme_pure_color;
       border-left:5px solid $theme_pure_active_color;
+      .mo-text{
+        color:$theme_pure_color;
+      }
     }
   }
   .panel-oa > .panel-heading .badge {
@@ -176,6 +176,10 @@ $clear-color:#fff;
     .list-group-item:hover{
       color: $theme_dark_color;
       border-left:5px solid $theme_dark_active_color;
+      .mo-text{
+        color:$theme_dark_color;
+        text-shadow: 0 0 1px $theme_dark_active_color;
+      }
     }
   }
   .panel-oa > .panel-heading .badge {
