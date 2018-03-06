@@ -17,9 +17,14 @@ export default {
   name: 'app',
   data () {
     let that = this;
+    // debugger;
+    console.log(that.$route.params)
+    console.log(that.$route.params.isLogin)
+    console.log(that.$route.query)
+    console.log(that.$route.query.isLogin)
     return {
       // isLogin: this.$store.state.isLogin
-      isLogin: true
+      isLogin: that.$route.params.propertyIsEnumerable()?that.$route.params.isLogin:true
     }
   },
   mounted: function(){
@@ -46,7 +51,7 @@ export default {
 </script>
 
 <style lang="scss">
-   @import '../static/css/normal.css';
-   @import '../static/css/bootstrap.min.css';
-   @import './assets/css/appMap.scss';
+   @import '../static/plugins/css/normal.css';
+   @import '../static/plugins/css/bootstrap.min.css';
+   @import './assets/css/app.scss';
 </style>

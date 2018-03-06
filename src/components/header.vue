@@ -44,10 +44,7 @@ export default {
         type = 'dark';
       }
       that.changeType = type;
-      // that.$emit('increment',that.changeType);
       this.$emit('increment');
-
-      console.log('increment');
     },
     goDashboard(){
       console.log('goDashboard');

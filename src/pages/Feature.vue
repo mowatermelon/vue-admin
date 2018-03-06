@@ -7,7 +7,7 @@
 
     <p class="alert alert-info">
       模板已完成功能：
-      <span v-for="(list,index) in lists" :key='index' >{{list}}&nbsp;&nbsp;&nbsp;</span>
+      <span v-for="(list,index) in lists" :key='index' >{{index+'---'+list}}&nbsp;&nbsp;&nbsp;</span>
     </p>
   </div>
 </template>

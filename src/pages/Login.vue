@@ -5,44 +5,48 @@
       <p class="text-center alert alert-success"  :class="[!success?'hide':'']" v-text="successInfo"></p>
 
       <div class="form-horizontal col-xs-12 col-sm-6 col-sm-offset-3 loginBox">
-        <div class="h1 text-center" v-if="!gores">
-          <span class="glyphicon glyphicon-user loginIcon" alt="用户登录"></span>
-        </div>
-        <div class="h1 text-center" v-if="gores">
-          <span class="	glyphicon glyphicon-info-sign loginIcon" alt="用户注册"></span>
-        </div>
-        <div class="form-group" :class="checkForm">
-          <label class="input-group-addon glyphicon glyphicon-user col-xs-2 " for="userName"></label>
-          <div class="col-xs-10 has-feedback">
-            <span class="glyphicon form-control-feedback " :class="checkInput"></span>
-            <input type="text" class="form-control" id="userName" placeholder="请输入用户名"  v-model="uname"/>
+        <form>
+          <div class="h1 text-center" v-if="!gores">
+            <span class="glyphicon glyphicon-user loginIcon" alt="用户登录"></span>
           </div>
-        </div>
-
-        <div class="form-group" :class="checkForm">
-          <label class="input-group-addon glyphicon glyphicon-lock col-xs-2" for="userPwd"></label>
-          <div class="col-xs-10 has-feedback">
-            <span class="glyphicon form-control-feedback" :class="checkInput"></span>
-          <input type="password" class="form-control" id="userPwd" placeholder="请输入密码"  v-model="password "/>
-
+          <div class="h1 text-center" v-if="gores">
+            <span class="	glyphicon glyphicon-info-sign loginIcon" alt="用户注册"></span>
           </div>
-        </div>
-
-        <div class="form-group" v-if="gores" :class="checkForm">
-          <label class="input-group-addon glyphicon glyphicon-asterisk col-xs-2" for="userrPwd"></label>
-          <div class="col-xs-10 has-feedback">
-            <span class="glyphicon form-control-feedback" :class="checkInput"></span>
-            <input type="password" class="form-control" id="userrPwd" placeholder="请再次确认输入密码"  v-model="rpassword "/>
+          <div class="form-group" :class="checkForm">
+            <label class="input-group-addon glyphicon glyphicon-user col-xs-2 " for="userName"></label>
+            <div class="col-xs-10 has-feedback">
+              <span class="glyphicon form-control-feedback " :class="checkInput"></span>
+              <input type="text" class="form-control" id="userName" placeholder="请输入用户名"  v-model="uname"/>
+            </div>
           </div>
-        </div>
-        <div v-if="!gores">
-          <button class="btn btn-block submitBtn" @click="checkLogin()">登陆账户</button>
-          <button class="btn btn-link pull-right" @click="goReg()">用户注册</button>
-        </div>
-        <div v-if="gores">
-          <button class="btn btn-block submitBtn" @click="checkReg()">注册账户</button>
-          <button class="btn btn-link pull-right" @click="goLogin()">已有帐号去登陆</button>
-        </div>
+
+          <div class="form-group" :class="checkForm">
+            <label class="input-group-addon glyphicon glyphicon-lock col-xs-2" for="userPwd"></label>
+            <div class="col-xs-10 has-feedback">
+              <span class="glyphicon form-control-feedback" :class="checkInput"></span>
+            <input type="password" class="form-control" id="userPwd" placeholder="请输入密码"  v-model="password " autocomplete="on"/>
+
+            </div>
+          </div>
+
+          <div class="form-group" v-if="gores" :class="checkForm">
+            <label class="input-group-addon glyphicon glyphicon-asterisk col-xs-2" for="userrPwd"></label>
+            <div class="col-xs-10 has-feedback">
+              <span class="glyphicon form-control-feedback" :class="checkInput"></span>
+              <input type="password" class="form-control" id="userrPwd" placeholder="请再次确认输入密码"  v-model="rpassword" autocomplete="on"/>
+            </div>
+          </div>
+          <div v-if="!gores">
+            <button class="btn btn-block submitBtn" @click="checkLogin()">登陆账户</button>
+            <button class="btn btn-link pull-right" @click="goReg()">用户注册</button>
+          </div>
+          <div v-if="gores">
+            <button class="btn btn-block submitBtn" @click="checkReg()">注册账户</button>
+            <button class="btn btn-link pull-right" @click="goLogin()">已有帐号去登陆</button>
+          </div>
+        </form>
+
+
       </div>
     </div>
   </transition>
@@ -92,17 +96,6 @@ export default {
         _this.success = true;
         _this.successInfo = '登录成功正在跳转....';
         this.$emit('increment');
-        // this.$emit('increment', false);
-
-        console.log('increment');
-        // this.$emit('checkLogin', false);
-        // store.mutations
-        // _this.$store.commit('checkLogin', false);
-
-        // _this.$store.commit('checkLogin', false);
-        // middleWare.$emit('login-check', false);
-        // _this.ref.emit("login-check", false);
-        // store.checkLogin(store.state.isLogin,false);
         // _this.$router.push({path: '/',  params: { isLogin: false }});
       } else {
         _this.error = true;

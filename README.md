@@ -42,13 +42,70 @@ npm run build
 
 ```
 
+# 项目结构图
+
+```text
+├── build                                       // webpack配置文件
+├── config                                      // 基本配置
+│   │   ├── dev.env.js                              // 开发环境配置文件
+│   │   ├── index.js                              // 总配置文件
+│   │   ├── prod.env.js                              // 生产环境配置文件
+│   │   ├── test.env.js                              // 测试环境配置文件
+├── dist                                        // 上线项目文件，放在服务器即可正常访问
+├── screenshots                                 // 项目截图
+│   ├── login.png                              // 登陆页面显示效果
+│   ├── register.png                              // 注册页面显示效果
+│   ├── large-pure.png                              // 大屏状态下紫色主题显示效果
+│   ├── middle-blue.png                              // 中屏状态下蓝色主题显示效果
+│   ├── small-dark.png                              // 小屏状态下黑色主题显示效果
+├── src                                         // 源码目录
+│   ├── asset                              // 项目相关设计资源
+│   │   ├── css                              // 项目相关样式设计文件
+│   │   │   ├── app.scss                              // 项目主要的样式文件，整合了其他样式文件板块，最后在app.vue进行引入
+│   │   │   ├── framework.scss                              // 项目主要的框架样式文件
+│   │   │   ├── reset.scss                              // 项目自定义的重置样式文件
+│   │   │   ├── theme.scss                              // 项目主要的主题样式文件
+│   │   │   ├── tool.scss                              // 项目主要的通用帮助样式文件
+│   │   ├── js                              // 项目相关样式设计文件
+│   │   │   ├── router
+│   │   │   │   └── index.js                           // 路由配置
+│   │   │   ├── vuex                                      // vuex的状态管理
+│   │   │   │   ├── store.js                            // 引用vuex，创建store
+│   ├── components                              // 组件
+│   │   ├── Footer.vue                    // 底部公共组件
+│   │   ├── Header.vue                     // 头部公共组件
+│   │   ├── LeftAside.vue                 // 左侧边公共组件
+│   ├── layouts
+│   │   ├── HeaderAsideFooterResponsiveLayout                    // 头部左侧边底部响应布局
+│   │   │   ├── Layout.vue                     // 响应布局组件
+│   ├── pages
+│   │   ├── Feature.vue                    // 描述当前项目实现功能页
+│   │   ├── Hello.vue                     // 欢迎页
+│   │   ├── Login.vue                 // 登录页
+│   ├── service                                 // 数据交互统一调配
+│   │   ├── getData.js                          // 获取数据的统一调配文件，对接口进行统一管理
+│   ├── App.vue                                 // 页面入口文件
+│   ├── main.js                                 // 程序入口文件，加载各种公共组件
+├── static                                         // 源码目录
+│   ├── plugins                              // 引用的插件
+│   │   ├── css                              // 引用第三方的样式文件
+│   │   ├── font                              // 引用第三方的字体文件
+│   ├── mock                              // 数据模拟
+│   │   ├── completeList.json                              // 当前项目已经完成的功能数据
+│   │   ├── leftAsideData.json                             // 项目中左侧面板的数据文件
+├── index.html                                  // 入口html文件
+.
+
+56 directories, 203 files
+```
+
 # 项目效果图
 
-![登陆页面显示效果](static/img/login.png)
-![注册页面显示效果](static/img/register.png)
-![大屏状态下紫色主题显示效果](static/img/large-pure.png)
-![中屏状态下蓝色主题显示效果](static/img/middle-blue.png)
-![小屏状态下黑色主题显示效果](static/img/small-dark.png)
+![登陆页面显示效果](screenshots/login.png)
+![注册页面显示效果](screenshots/register.png)
+![大屏状态下紫色主题显示效果](screenshots/large-pure.png)
+![中屏状态下蓝色主题显示效果](screenshots/middle-blue.png)
+![小屏状态下黑色主题显示效果](screenshots/small-dark.png)
 
 # 修改主题效果
 

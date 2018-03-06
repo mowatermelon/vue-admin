@@ -1,6 +1,4 @@
-/**
- * Created by cs on 2017/4/30.
- */
+
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -13,10 +11,10 @@ const store = new Vuex.Store({
   },
   mutations: {
     getUpdate (state, code) {
-      state.update_car = code;
+        state.update_car = code
     },
     checkLogin (state, code) {
-      state.isLogin = code;
+        state.isLogin = code
     }
   }
 

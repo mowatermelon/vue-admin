@@ -25,7 +25,6 @@ export default {
   methods:{
     checkTheme (state) {
        console.log('checkTheme');
-      // console.log(state);
 
       let that = this;
       if(typeof(state)!="boolean"){
