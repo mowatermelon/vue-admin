@@ -53,6 +53,9 @@ export default {
       console.log('goSetting');
     },
     loginOut(){
+      let _this = this;
+      _this.$store.commit('checkLogin',true);
+      _this.$router.push({path: '/'});
       console.log('loginOut');
     }
   }
