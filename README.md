@@ -120,7 +120,7 @@ $linear-start:#1861D5;//高亮效果的渐变开始颜色
 $linear-end:#3080FE;//高亮效果的渐变结束颜色
 
 $theme_blue_color: #5bc0de; // 页面蓝色主题 --默认色
-$theme_blue_normal_color:#323a45; // 页面蓝色主题 --未激活色
+$theme_blue_normal_color:#1861D5; // 页面蓝色主题 --未激活色
 $theme_blue_active_color: #31708f; // 页面蓝色主题 --默激活色
 
 $theme_pure_color:#8f88f9; //页面紫色主题 --默认色
