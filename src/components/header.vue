@@ -37,14 +37,9 @@ export default {
   },
   methods: {
     changeTheme(type){
-      console.log('changeTheme');
-      console.log(type);
-      let that = this;
-      if(typeof(type)!=="string"){
-        type = 'dark';
-      }
-      that.changeType = type;
-      this.$emit('increment');
+      console.log('checkTheme：'+type);
+      let _this = this;
+      _this.$store.commit('setTheme',type);
     },
     goDashboard(){
       console.log('goDashboard');
