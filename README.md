@@ -63,8 +63,8 @@ $theme_blue_color: #5bc0de; // 页面蓝色主题 --默认色
 $theme_blue_normal_color:#323a45; // 页面蓝色主题 --未激活色
 $theme_blue_active_color: #31708f; // 页面蓝色主题 --默激活色
 
-$theme_pure_color:#4772d9; //页面紫色主题 --默认色
-$theme_pure_normal_color:#8f88f9; //页面紫色主题 --未激活色
+$theme_pure_color:#8f88f9; //页面紫色主题 --默认色
+$theme_pure_normal_color:#4772d9; //页面紫色主题 --未激活色
 $theme_pure_active_color:#b1c3ef; //页面紫色主题 --默激活色
 
 $theme_dark_color:#323a45; //页面灰色主题 --默认色
