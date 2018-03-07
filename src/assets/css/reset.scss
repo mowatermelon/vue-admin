@@ -2,6 +2,11 @@
 
 $clear-color:#fff;
 
+body,html{
+  -webkit-font-smoothing: antialiased;
+  font-family: -apple-system,PingFang SC,Helvetica Neue,Helvetica,Nimbus Sans L,Arial,Liberation Sans,Hiragino Sans GB,Source Han Sans CN,Source Han Sans SC,Microsoft YaHei,Wenquanyi Micro Hei,WenQuanYi Zen Hei,ST Heiti,SimHei,WenQuanYi Zen Hei Sharp,sans-serif;
+}
+
 /*清除默认的样式bug*/
 input:-webkit-autofill {
   box-shadow: 0 0 0px 1000px $clear-color inset;
