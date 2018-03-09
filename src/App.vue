@@ -13,7 +13,6 @@
 import Login from './pages/Login'
 import Layout from './layouts/HeaderAsideFooterResponsiveLayout/Layout'
 
-// Vue.use(Vuex)
 export default {
   name: 'app',
   data () {
