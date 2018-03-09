@@ -31,7 +31,7 @@
 import Hello from '../pages/Hello'
 import Feature from '../pages/Feature'
 import Vfooter from './Footer'
-import axios from 'axios';
+import {getAjax} from '../service/moAjax'
 
 export default {
     name: 'LeftAside',
@@ -57,8 +57,7 @@ export default {
     },
   created:function(){
     let that = this;
-    axios
-      .get('../../static/mock/leftAsideData.json')
+    getAjax('../../static/mock/leftAsideData.json')
       .then((response) => {
         console.log("请求到的面板数据是");
         console.log(response.data);

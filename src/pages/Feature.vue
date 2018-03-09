@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import {getAjax} from '../service/moAjax'
 
 export default {
   name: 'Feature',
@@ -24,8 +24,7 @@ export default {
   },
   created:function(){
     let that = this;
-    axios
-      .get('../../static/mock/completeList.json')
+    getAjax('../../static/mock/completeList.json')
       .then((response) => {
         console.log("请求到的已完成功能数据是");
         console.log(response.data);
