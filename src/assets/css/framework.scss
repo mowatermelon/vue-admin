@@ -81,7 +81,7 @@ $footer_height:3rem;
   main{
     width: 100%;
     display: flex;
-    overflow: auto; 
+    overflow: auto;
     flex-direction: row;// row | row-reverse | column | column-reverse
     flex-wrap: nowrap;//nowrap | wrap | wrap-reverse
     align-items: stretch;//flex-start | flex-end | center | baseline | stretch;
@@ -101,12 +101,15 @@ $footer_height:3rem;
             border-color:transparent;
             border-radius: 0 $normal_radius $normal_radius 0;
           }
+          p{
+            margin: 0;
+          }
         }
       }
     }
     .mo-oa-main{
       flex:1;
-      overflow: auto; 
+      overflow: auto;
       height: 100%;
       //不知道为何main部分向下滚动有点问题，有一部分被隐藏了，所以在这里扩充了向下的padding
       padding:$normal_padding $normal_padding $normal_padding*4 $normal_padding;
