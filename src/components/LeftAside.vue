@@ -13,12 +13,12 @@
       <div :id="'tab'+tindex" class="panel-collapse collapse" :class="{'in': isActive == tindex}">
         <div class="panel-body">
           <ul class="list-group">
-            <li class="list-group-item" v-for="(list,lindex) in tab.content" :key='lindex' :class="{'active': isActiveList == (tindex+'--'+lindex)}" @click="goRouter(tindex,lindex)" >
-              <router-link :to="{path:list.link,query: {tabIndex: tindex+1,listIndex:lindex+1}}" class="mo-text">
+            <router-link class="list-group-item" v-for="(list,lindex) in tab.content" :key='lindex' :to="{path:list.link,query: {tabIndex: tindex+1,listIndex:lindex+1}}" :class="{'active': isActiveList == (tindex+'--'+lindex)}" >
+              <P class="mo-text" @click="goRouter(tindex,lindex)">
                 <i class="glyphicon" :class="'glyphicon-'+list.icon"></i>
                 <span class="mo-text">&nbsp;&nbsp;&nbsp;&nbsp;{{tindex+1}}--{{list.text}}</span>
-              </router-link>
-            </li>
+              </P>
+            </router-link>
           </ul>
         </div>
       </div>
