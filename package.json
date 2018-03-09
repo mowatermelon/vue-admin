@@ -1,13 +1,13 @@
 {
   "name": "vue-admin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "由西瓜酱提供包含三种颜色主题的vue后台操作模板",
   "author": "mowatermelon <neefoxmo@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
-    "dist":"node prod.dev.js"
+    "dist": "node prod.dev.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
