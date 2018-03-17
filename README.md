@@ -48,7 +48,9 @@ npm run dist
 # 项目结构图
 
 ```text
-├── build                                       // webpack配置文件
+├── build                                       // 生产环境webpack配置文件和运行文件
+│   │   ├── ...                              // webpack配置文件
+│   │   ├── prod.dev.js                              // 生产环境运行文件
 ├── config                                      // 基本配置
 │   │   ├── dev.env.js                              // 开发环境配置文件
 │   │   ├── index.js                              // 总配置文件
