@@ -1,7 +1,7 @@
 'use strict'
 
 var express = require('express')
-var config = require('./config/index')
+var config = require('../config/index')
 var opn = require('opn')
 
 var port = process.env.PORT || config.build.port
