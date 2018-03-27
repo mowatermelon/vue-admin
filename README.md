@@ -17,6 +17,8 @@
 - 降低了对于网络环境不太好的情况，资源请求压力。
 - 左侧面板数据支持灵活配置，数据修改路径是项目根文件下`static/mock/leftPanelData.json`。
 - 因为集成了axios，更方便请求其他接口数据。
+- 添加了m-input组件，提供了prefix-icon 和 suffix-icon功能
+- 添加aesEncrypt,aesDecrypt数据加密和解密
 
 # 运行项目
 
