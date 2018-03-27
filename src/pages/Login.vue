@@ -90,12 +90,12 @@ export default {
         _this.error = false;
         _this.success = true;
         _this.successInfo = '登录成功正在跳转....';
-        
-        _this.$store.commit('setUName',_this.uname);        
+
+        _this.$store.commit('setUName',_this.uname);
         _this.$store.commit('checkLogin',false);
 
        //保证登录进入也能有正确的路由信息显示
-        _this.$router.push({path: '/Hello', query: {tabIndex: 1,listIndex:1}});
+        _this.$router.push({path: '/Feature', query: {tabIndex: 1,listIndex:1}});
       } else {
         _this.error = true;
         _this.errorInfo = '用户名或者帐号输入错误请确认';
@@ -105,10 +105,10 @@ export default {
       let _this = this;
       _this.error = false;
       if (_this.uname!== '' && _this.password !== '' && _this.password === _this.rpassword) {
-        _this.$store.commit('setUName',_this.uname);                
+        _this.$store.commit('setUName',_this.uname);
         _this.$store.commit('checkLogin',false);
         //保证登录进入也能有正确的路由信息显示
-        _this.$router.push({path: '/Hello', query: {tabIndex: 1,listIndex:1}});
+        _this.$router.push({path: '/Feature', query: {tabIndex: 1,listIndex:1}});
         // _this.gores = false;
       } else {
         _this.error = true;
