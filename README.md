@@ -82,6 +82,8 @@ npm run dist
 │   │   ├── Footer.vue                    // 底部公共组件
 │   │   ├── Header.vue                     // 头部公共组件
 │   │   ├── LeftAside.vue                 // 左侧边公共组件
+│   │   ├── MInput.vue                     // 输入框公共组件
+│   │   ├── MForm.vue                 // 表单公共组件
 │   ├── layouts
 │   │   ├── HeaderAsideFooterResponsiveLayout                    // 头部左侧边底部响应布局
 │   │   │   ├── Layout.vue                     // 响应布局组件
