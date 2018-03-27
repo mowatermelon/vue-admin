@@ -7,16 +7,24 @@
 
     <p v-for="count in 3" class="alert alert-info" :key="count">{{msg}}</p>
     <p class="alert alert-danger">重要的话要说三遍</p>
+    <m-form></m-form>
   </div>
 </template>
 
 <script>
+import MForm from '../components/MForm'
+
 export default {
   name: 'Hello',
   data () {
     return {
-      msg:"欢迎来到西瓜的小屋"
+      msg:"欢迎来到西瓜的小屋123456"
     }
+  },
+  components:{
+    MForm
+  },
+  methods:{
   }
 }
 </script>
