@@ -49,6 +49,7 @@
 </template>
 
 <script>
+const crypto = require('crypto');
 
 export default {
   name: 'Login',
@@ -84,14 +85,18 @@ export default {
   },
   methods: {
     checkLogin () {
-      const key = '123';
       let _this = this;
-      if (_this.password === key && _this.uname === key) {
+      const UName = _this.$store.state.userName||_this.aesEncrypt('123', 'UName');
+      const UPassd = _this.$store.state.userPassword||_this.aesEncrypt('123', 'UPassd');
+
+      if (_this.password === _this.aesDecrypt(UPassd, 'UPassd') && _this.uname === _this.aesDecrypt(UName, 'UName')) {
         _this.error = false;
         _this.success = true;
         _this.successInfo = '登录成功正在跳转....';
 
-        _this.$store.commit('setUName',_this.uname);
+        _this.$store.commit('setUName',_this.aesEncrypt(_this.uname, 'UName'));
+        _this.$store.commit('setUPassd',_this.aesEncrypt(_this.password, 'UPassd'));
+
         _this.$store.commit('checkLogin',false);
 
        //保证登录进入也能有正确的路由信息显示
@@ -105,7 +110,7 @@ export default {
       let _this = this;
       _this.error = false;
       if (_this.uname!== '' && _this.password !== '' && _this.password === _this.rpassword) {
-        _this.$store.commit('setUName',_this.uname);
+        _this.$store.commit('setUName',_this.aesEncrypt(_this.uname, 'UName'));
         _this.$store.commit('checkLogin',false);
         //保证登录进入也能有正确的路由信息显示
         _this.$router.push({path: '/Feature', query: {tabIndex: 1,listIndex:1}});
@@ -131,6 +136,18 @@ export default {
     },
     goBack () {
       this.$router.go(-1);
+    },
+    aesEncrypt(data, key) {
+        const cipher = crypto.createCipher('aes192', key);
+        var crypted = cipher.update(data, 'utf8', 'hex');
+        crypted += cipher.final('hex');
+        return crypted;
+    },
+    aesDecrypt(encrypted, key) {
+        const decipher = crypto.createDecipher('aes192', key);
+        var decrypted = decipher.update(encrypted, 'hex', 'utf8');
+        decrypted += decipher.final('utf8');
+        return decrypted;
     }
   }
 };
