@@ -6,7 +6,8 @@ import loS from '../../../service/loStorage'
 const init = [
   {name:'isLogin',value:'true'},
   {name:'themeType',value:'blue'},
-  {name:'userName',value:''}
+  {name:'userName',value:''},
+  {name:'userPassword',value:''}
 ];
 
 loS.initData(init);
@@ -17,7 +18,8 @@ const store = new Vuex.Store({
   state: {
     isLogin: loS.getItem('isLogin',false),
     themeType: loS.getItem('themeType',true),
-    userName: loS.getItem('userName',true)
+    userName: loS.getItem('userName',true),
+    userPassword: loS.getItem('userPassword',true)
   },
   mutations: {
     checkLogin (state, code) {
@@ -25,12 +27,16 @@ const store = new Vuex.Store({
         state.isLogin = loS.getItem('isLogin',false);
     },
     setTheme (state, code) {
-      loS.setItem('themeType',code);      
+      loS.setItem('themeType',code);
       state.themeType = loS.getItem('themeType',true);
     },
     setUName (state, code) {
-      loS.setItem('userName',code);      
+      loS.setItem('userName',code);
       state.userName = loS.getItem('userName',true);
+    },
+    setUPassd (state, code) {
+      loS.setItem('userPassword',code);
+      state.userPassword = loS.getItem('userPassword',true);
     }
   }
 
