@@ -6,8 +6,8 @@
     <p class="alert alert-warning">当前激活面板信息：第{{$route.query.tabIndex}}个面板的第{{$route.query.listIndex}}个子面板</p>
 
     <p class="alert alert-info">
-      模板已完成功能：
-      <span v-for="(list,index) in lists" :key='index' >{{index+'---'+list}}&nbsp;&nbsp;&nbsp;</span>
+      模板已完成功能：<br/>
+      <span v-for="(list,index) in lists" :key='index' >{{index+'---'+list}}&nbsp;&nbsp;&nbsp;<br/></span>
     </p>
   </div>
 </template>
