@@ -4,8 +4,8 @@
     "icon":"dashboard",
     "content":
       [
-        {"text": "欢迎面板", "link":"/Hello","icon":"gift"},
-        {"text": "功能面板", "link":"/Feature","icon":"fire"}
+        {"text": "功能面板", "link":"/Feature","icon":"fire"},
+        {"text": "欢迎面板", "link":"/Hello","icon":"gift"}
       ]
   },
   {
