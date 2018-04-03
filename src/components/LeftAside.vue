@@ -31,7 +31,7 @@
 import Hello from '../pages/Hello'
 import Feature from '../pages/Feature'
 import Vfooter from './Footer'
-import {getAjax} from '../service/moAjax'
+import {getAjax} from '../service/util'
 
 export default {
     name: 'LeftAside',
