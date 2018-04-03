@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import {getAjax} from '../service/moAjax'
+import {getAjax} from '../service/util'
 
 export default {
   name: 'Feature',
