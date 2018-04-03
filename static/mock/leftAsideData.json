@@ -13,7 +13,7 @@
     "icon":"dashboard",
     "content":
       [
-        {"text": "欢迎面板", "link":"/Hello","icon":"plane"},
+        {"text": "学习面板", "link":"/Learn","icon":"plane"},
         {"text": "功能面板", "link":"/Feature","icon":"magnet"}
       ]
   },
