@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 const Hello = resolve => require(['@/pages/Hello'], resolve)
 const Feature = resolve => require(['@/pages/Feature'], resolve)
+const Learn = resolve => require(['@/pages/Learn'], resolve)
 
 Vue.use(Router)
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/Feature',
       name: 'v-Feature',
       component: Feature
+    },
+    {
+      path: '/Learn',
+      name: 'v-Learn',
+      component: Learn
     }
   ]
 })
