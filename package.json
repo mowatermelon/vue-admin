@@ -10,7 +10,7 @@
     "dist": "node build/prod.dev.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "vue": "^2.2.2",
     "vue-router": "^2.4.0"
   },
