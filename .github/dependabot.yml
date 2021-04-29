@@ -1,0 +1,34 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "12:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: autoprefixer
+    versions:
+    - 10.2.4
+    - 9.8.6
+  - dependency-name: webpack-bundle-analyzer
+    versions:
+    - 4.4.0
+  - dependency-name: file-loader
+    versions:
+    - 2.0.0
+  - dependency-name: webpack-dev-middleware
+    versions:
+    - 2.0.6
+  - dependency-name: vue-style-loader
+    versions:
+    - 4.1.2
+  - dependency-name: url-loader
+    versions:
+    - 0.6.2
+  - dependency-name: eslint-loader
+    versions:
+    - 2.2.1
+  - dependency-name: babel-loader
+    versions:
+    - 7.1.5
